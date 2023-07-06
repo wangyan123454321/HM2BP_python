@@ -1,0 +1,64 @@
+{
+    "IS_GRADIENT_CHECKING": false,
+    "BOOST_METHOD": true,
+    "EFFECT_RATIO": true,
+    "DEVICE": "cuda",
+
+    "OPTIMIZER": "adam",
+    "LEARNING_RATE": 0.001,
+    "MOMENTUM": 0.9,
+    "SHOWIMAGE": false,
+    "TEST_EPOCH": 200,
+    "WHITE_NOISE": 0.0,
+    "LAMBDA_REG": 10,
+    "BETA_REG": 0.04,
+
+    "WEIGHT_LIMIT": 8.0,
+
+    "BATCH_SIZE": 1,
+    "CHANNELS": 1,
+    "END_TIME": 400,
+    "NUM_CLASSES": 10,
+
+    "CROP": 0,
+    "SCALE": 12,
+    "ROTATION": 12,
+    "DISTORTION": 3.4,
+
+    "TRAIN_SAMPLES": 60000,
+    "TEST_SAMPLES": 10000,
+    "LOG_PATH": "./logs",
+
+    "DESIRED_LEVEL": 35.0,
+    "UNDESIRED_LEVEL": 5.0,
+
+    "LAYERS": [
+        {
+            "LAYER": "spiking",
+            "NAME": "hidden_0",
+            "INPUT_SHAPE": 784,
+            "OUTPUT_SHAPE": 800,
+            "VTH": 20.0,
+            "T_REFRAC": 2.0,
+            "TAU_M": 64.0,
+            "TAU_S": 8.0,
+            "initW": 1.0,
+            "initType": "Bernoulli"
+        },
+        {
+            "LAYER": "spiking",
+            "NAME": "output",
+            "INPUT_SHAPE": 800,
+            "OUTPUT_SHAPE": 10,
+            "VTH": 8.0,
+            "T_REFRAC": 2.0,
+            "TAU_M": 64.0,
+            "TAU_S": 8.0,
+            "initW": 1.0,
+            "initType": "Bernoulli",
+            "laterialType": "LOCAL_INHIBITION",
+            "localInbStrength": 1,
+            "MARGIN": 5
+        }
+    ]
+}
