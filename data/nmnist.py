@@ -5,7 +5,7 @@ import os
 import re
 
 class NMNIST(Dataset):
-    def __init__(self, path = "/wy/dataset_wy/2312_600_stable/train", train_or_test = "Train", data_shape = 2312, time_steps = 540) -> None:    
+    def __init__(self, path = "./data/", train_or_test = "Train", data_shape = 2312, time_steps = 540) -> None:    
         super().__init__()
         self.classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         extract_path = path + os.sep + "extract_" + train_or_test + "_" + str(data_shape) + "_" + str(time_steps)

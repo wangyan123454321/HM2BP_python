@@ -84,14 +84,14 @@ def main():
     
     # 训练集
     train_set = NMNIST(
-        path = "./data/2312_600_stable",
+        path = config.param("TRAIN_DATA_PATH"),
         train_or_test = "Train",
         data_shape = input_shape,
         time_steps = config.param("END_TIME")
     )
     # 测试集
     test_set = NMNIST(
-        path = "./data/2312_600_stable",
+        path = config.param("TEST_DATA_PATH"),
         train_or_test = "Test",
         data_shape = input_shape,
         time_steps = config.param("END_TIME")
