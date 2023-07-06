@@ -23,8 +23,8 @@
 
     "TRAIN_PER_CLASS": -1,
     "TEST_PER_CLASS": -1,
-    "TRAIN_DATA_PATH": "",
-    "TEST_DATA_PATH": "",
+    "TRAIN_DATA_PATH": "/wy/dataset_wy/2312_600_stable/extract",
+    "TEST_DATA_PATH": "/wy/dataset_wy/2312_600_stable/extract",
     "LOG_PATH": "./logs",
     
     "DESIRED_LEVEL": 35.0,
@@ -54,7 +54,7 @@
             "TAU_S": 8.0,
             "initW": 1.0,
             "initType": "Bernoulli",
-            "laterialType": "LOCAL_INHIBITION",
+            "laterialType": "NONE",
             "localInbStrength": 1,
             "MARGIN": 5
         }

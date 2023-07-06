@@ -5,6 +5,8 @@ from torch.autograd import Function as gf
 import math
 from . import functions as fun
 
+# "laterialType": "LOCAL_INHIBITION",
+
 class mm_linear(gf):
     @staticmethod
     @torch.jit.script

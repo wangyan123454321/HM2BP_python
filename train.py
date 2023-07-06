@@ -63,6 +63,10 @@ def main():
         if l == 0:
             input_shape = l_info["INPUT_SHAPE"]
         if l_info["LAYER"] == "spiking":
+            w_lat = None
+            if "laterialType" in l_info:
+                if l_info["laterialType"] == "LOCAL_INHIBITION":
+                    w_lat = l_info["localInbStrength"]
             layers.append(Spiking(
                 input_shape = l_info["INPUT_SHAPE"],
                 output_shape = l_info["OUTPUT_SHAPE"],
@@ -70,7 +74,7 @@ def main():
                 tau_m = l_info["TAU_M"],
                 tau_s = l_info["TAU_S"],
                 t_ref = l_info["T_REFRAC"],
-                weight_lateral = l_info["localInbStrength"] if "localInbStrength" in l_info else None
+                weight_lateral = w_lat
             ))
     layers.append(FiringCounter())
     
